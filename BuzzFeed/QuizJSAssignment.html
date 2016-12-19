@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="QuizJSAssignment.css" />
+
+</head>
+<body>
+
+<div class = quizholder">
+<h3 class = "Quiz_Title">How likely are you to be a Disney Villain?<br/> THE QUIZ!</h3>
+
+<img src=>
+
+<div id="firstquestion">
+                <fieldset>
+                <legend>Question 1:</legend>
+                <label >When you are angry with you brother, you:</label></br>
+                <input type="radio"  name="selectedangry" value="1"
+                       class="firstQAnswer"/>
+                Push him into a stampede of roaming wildabeest.</br>
+                <input type="radio"  name="selectedangry" value="2"
+                       class="firstQAnswer"/>
+                Get your cute animals friends to do his laundry to say you are sorry.</br>
+                <input type="radio"  name="selectedangry" value="3"
+                       class="firstQAnswer"/>
+                Put a curse on him.</br>
+                <input type="radio"  name="selectedangry" value="4"
+                       class="firstQAnswer"/>
+                Sing "under-the-sea!"</br>
+                </fieldset>
+</div>
+
+<div id="secondquestion">
+                    <fieldset>
+                        <legend>Question 2:</legend>
+                        <label >When you are in the mood to sing, you usually belt out:</label></br>
+                        <input type="checkbox"  name="selectedsong" value="1" class="secondQAnswer"/>
+                        Be prepared (Lion King)</br>
+                        <input type="checkbox"  name="selectedsong" value="2" class="secondQAnswer"/>
+                        Heigh, ho - Heigh, ho (Snow White and the 7 Dwarves)</br>
+                        <input type="checkbox"  name="selectedsong" value="3" class="secondQAnswer"/>
+                        Poor unfortunate soul (Little Mermaid)</br>
+                        <input type="checkbox"  name="selectedsong" value="4" class="secondQAnswer"/>
+                        Under-the-sea (Little Mermaid)</br>
+                    </fieldset>
+</div>
+
+<div>
+<fieldset>
+<legend>Question 3:</legend>
+<label>Who is/are your best friend(s)?</label>
+    <select id="thirdquestion"></br>
+        <option value="0" name="selectedbestfriend" class = "thirdQAnswer">Select an option</option>
+        <option value="1" name="selectedbestfriend" class = "thirdQAnswer">A python</option>
+        <option value="2" name="selectedbestfriend" class = "thirdQAnswer">7 Dwarves (and some little birdies)</option>
+        <option value="3" name="selectedbestfriend" class = "thirdQAnswer">Two small eels</option>
+        <option value="4" name="selectedbestfriend" class = "thirdQAnswer">A small crab</option>
+    </select>
+    </fieldset>
+</div>
+
+<div id="fourthquestion">
+            <fieldset>
+                <legend>Question 4:</legend>
+                <label >What is your natural habitat?:</label></br>
+                <input type="radio"  name="selectedhabitat" value="1"
+                       class="fourthQAnswer"/>
+                The savannah.</br>
+                <input type="radio"  name="selectedhabitat" value="2"
+                       class="fourthQAnswer"/>
+                A lovely forrest.</br>
+                <input type="radio"  name="selectedhabitat" value="3"
+                       class="fourthQAnswer"/>
+                An underwater grotto.</br>
+                <input type="radio"  name="selectedhabitat" value="4"
+                       class="fourthQAnswer"/>
+                An underwater castle!"</br>
+            </fieldset>
+</div>
+
+
+<div id="fifthquestion">
+<legend>Question 5:</legend>
+What photo do you most resonate with? </br>
+<button type = "submit" class = "fifthQAnswer" id = "option1" value= "1" onclick="funcFive(1)"> <img src= "bfphotos/scar.png" alt = "submit" style="height:100px; width: 140px;"></button>
+<button type = "submit"  class = "fifthQAnswer" id = "option2" value = "2" onclick="funcFive(2)"> <img src= "bfphotos/snowhite.jpeg" alt = "submit"  style="height:100px; width: 140px;"></button>
+<button type = "submit" class = "fifthQAnswer" id = "option3" value = "3"  onclick="funcFive(3)"> <img src="bfphotos/ursula.png" alt = "submit"  style="height:100px; width: 140px;"></button>
+<button type = "submit" class = "fifthQAnswer" id = "option4" value = "4"  onclick="funcFive(4)"> <img src="bfphotos/ariel.jpg" alt = "submit"  style="height:100px; width: 140px;"></button>
+</div>
+
+<input type = "submit" onclick="answerTotal()"> Click submit when complete
+</div>
+
+<script>
+    var firstForm = document.getElementsByClassName("firstQAnswer");
+    var secondForm = document.getElementsByClassName("secondQAnswer");
+    var thirdForm = document.getElementsByClassName("thirdQAnswer");
+    var fourthForm = document.getElementsByClassName("fourthQAnswer");
+    var fifthForm = document.getElementsByClassName("fifthQAnswer");
+
+    function answerTotal() {
+
+//    Question 1
+        for (var i = 0; i < firstForm.length; i++) {
+            if (document.getElementsByClassName("firstQAnswer")[i].checked) {
+                var firstTotal = parseInt(document.getElementsByClassName("firstQAnswer")[i].value);
+            }
+        }
+
+        console.log(firstTotal);
+
+        for (var i = 0; i < secondForm.length; i++) {
+            if (document.getElementsByClassName("secondQAnswer")[i].checked) {
+                var secondTotal = parseInt(document.getElementsByClassName("secondQAnswer")[i].value);
+            }
+        }
+
+        console.log(secondTotal);
+
+        for (var i = 0; i < thirdForm.length; i++) {
+            if (document.getElementsByClassName("thirdQAnswer")[i].value) {
+                var thirdTotal = parseInt(document.getElementsByClassName("thirdQAnswer")[i].value);
+            }
+        }
+
+        console.log(thirdTotal);
+
+        for (var i = 0; i < fourthForm.length; i++) {
+            if (document.getElementsByClassName("fourthQAnswer")[i].checked) {
+                var fourthTotal = parseInt(document.getElementsByClassName("fourthQAnswer")[i].value);
+            }
+        }
+
+        console.log(fourthTotal);
+
+        var fifthTotal;
+
+        for (var i = 0; i < fifthForm.length; i++) {
+            if (document.getElementsByClassName("fifthQAnswer")[i].onclick) {
+                fifthTotal = parseInt(document.getElementsByClassName("fifthQAnswer")[i].value);
+            }
+            console.log(fifthTotal);
+        }
+
+       var quizTotal = (firstTotal + secondTotal + thirdTotal + fourthTotal + fifthTotal);
+
+            if (quizTotal <= 16) {
+                alert ("You are definetly a villain! Embrace it ;)!");
+            }
+
+            if (quizTotal > 16) {
+                alert ("You are one of the good guys! Walt Disney would be so proud! :)");
+
+            }
+        }
+
+</script>
+</body>
+</html>
+
+<!--//        //    Question 2-->
+<!--//        function getSelectedsong() {-->
+<!--//            var selectedSonganswer = 0;-->
+<!--//            var theSecondForm = document.forms["secondquestion"]-->
+<!--//            var selectedSong = theSecondForm.elements["selectedsong"];-->
+<!--//-->
+<!--//            for (var i = 0; i < selectedSong.length; i++) {-->
+<!--//                if (selectedSong[i].checked) {-->
+<!--//                    selectedSonganswer = selected_song[selectedSong[i].value];-->
+<!--//                    counter += parseInt(selectedSonganswer);-->
+<!--//-->
+<!--//                    break;-->
+<!--//-->
+<!--//                }-->
+<!--//            }-->
+<!--//            return selectedSonganswer;-->
+<!--//        }-->
+<!--//-->
+<!--//            //    Question 3-->
+<!--//            function getSelectedbestfriend() {-->
+<!--//                var selectedBestfriendanswer = 0;-->
+<!--//                var theThirdForm = document.forms["thirdquestion"]-->
+<!--//                var selectedBestfriend = theThirdForm.elements["selectedbestfriend"];-->
+<!--//-->
+<!--//                for (var i = 0; i < selectedBestfriend.length; i++) {-->
+<!--//                    if (selectedBestfriend[i].checked) {-->
+<!--//                        selectedBestfriendanswer = selected_bestfriend[selectedBestfriend[i].value];-->
+<!--//                        counter += parseInt(selectedBestfriendanswer);-->
+<!--//                        break;-->
+<!--//-->
+<!--//                    }-->
+<!--//                }-->
+<!--//                return selectedBestfriendanswer;-->
+<!--//            }-->
+<!--//-->
+<!--//                //    Question 4-->
+<!--//                function getSelectedhabitat() {-->
+<!--//                    var selectedhabitatanswer = 0;-->
+<!--//                    var theFourthForm = document.forms["fourthquestion"]-->
+<!--//                    var selectedHabitat = theFourthForm.elements["selectedhabitat"];-->
+<!--//-->
+<!--//                    for (var i = 0; i < selectedHabitat.length; i++) {-->
+<!--//                        if (selectedHabitat[i].checked) {-->
+<!--//                            selectedhabitatanswer = selected_habitat[selectedhabitatanswer[i].value];-->
+<!--//                            counter += parseInt(selectedhabitatanswer);-->
+<!--//                            break;-->
+<!--//-->
+<!--//                        }-->
+<!--//                    }-->
+<!--//                    return selectedhabitatanswer;-->
+<!--//                }-->
+<!--//-->
+<!--//                    //    Question 5-->
+<!--//                    function getSelectedphoto() {-->
+<!--//                        var selectedheadsanswer = 0;-->
+<!--//                        var theFifthForm = document.forms["fifthquestion"]-->
+<!--//                        var selectedHeads = theFifthForm.elements["selectedheads"];-->
+<!--//-->
+<!--//                        for (var i = 0; i < selectedHeads.length; i++) {-->
+<!--//                            if (selectedHeads[i].checked) {-->
+<!--//                                selectedheadsanswer = selected_heads[selectedheadsanswer[i].value];-->
+<!--//                                counter += parseInt(selectedheadsanswer);-->
+<!--//                                break;-->
+<!--//-->
+<!--//                            }-->
+<!--//                        }-->
+<!--//                        return selectedheadsanswer;-->
+<!--//                    }-->
+<!--//-->
+
+<!--//                            }-->
+<!--//                        }-->
